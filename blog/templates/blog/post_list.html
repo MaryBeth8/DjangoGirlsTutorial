@@ -3,7 +3,16 @@
 		<title>Mary Beth's Bodacious Blog</title>
 	</head>
 	<body>
-		<p>Well, Howdy!</p>
-		<p>Lookat this webpage, isn't it nice? :) </p>
+		<div>
+			<h1><a href="/">Django Gurls Blog</a></h1>
+		</div>
+
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
 	</body>
 </html>
